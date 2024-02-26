@@ -1,4 +1,4 @@
-const typeDefs = /* GraphQL */ `
+export const typeDefs = /* GraphQL */ `
   type User {
     id: ID!
     name: String!

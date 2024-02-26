@@ -3,22 +3,9 @@ import { Box, Tabs, Tab } from "@mui/material";
 //import { graphql } from "graphql";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
-import { observer } from "mobx-react";
 
-const UserNameQuery = gql(/* GraphQL */ `
-  query Viewer {
-    viewer {
-      id
-      name
-      status
-    }
-  }
-`);
-
-export default observer(function Header() {
+export default function Cart() {
   let location = useRouter();
-  const data = useQuery(UserNameQuery);
 
   return (
     <div>
@@ -36,4 +23,4 @@ export default observer(function Header() {
       </Box>
     </div>
   );
-});
+}

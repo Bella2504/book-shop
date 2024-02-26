@@ -13,7 +13,6 @@ const resolvers: Resolvers = {
       return userProfile;
     },
     async items(_parent, _args, _context, _info) {
-      console.log(_args);
       try {
         const { start, limit } = _args;
         const pages = (
@@ -23,8 +22,8 @@ const resolvers: Resolvers = {
           "https://jsonplaceholder.typicode.com/photos",
           {
             params: {
-              _start: start || 0,
-              _limit: limit || 20,
+              _start: limit * (start - 1 || 0),
+              _limit: limit,
             },
           }
         );
